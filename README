@@ -1,0 +1,6 @@
+RGB-Mixer is a basic RGB LED colour mixer for nanpy and the Raspberry Pi
+(though the latter isn't required). 
+
+Simply configure 3 potentiometers with your Arduino board and an RGB LED. 
+
+
