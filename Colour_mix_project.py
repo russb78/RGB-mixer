@@ -72,5 +72,5 @@ def main():
 		except KeyboardInterrupt:
 			close_pins()
 
-	
-main()
+if __name__ == '__main__':	
+	main()
