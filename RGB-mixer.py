@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # RGB LED dimmer test
-# Russell Barnes - 04 Sept 2013
+# Russell Barnes - 04 Sept 2013 (Updated 19th November for issue 134 of Linux User magazine).
 
 from nanpy import Arduino
 from time import sleep
@@ -24,7 +24,7 @@ for pins in (pot_r_Pin, pot_g_Pin, pot_b_Pin):
 	Arduino.pinMode(pins, Arduino.INPUT)
 
 # prints values to the terminal when True
-debug = True
+debug = False
 
 def get_pots():
 	"""
@@ -91,13 +91,11 @@ def main():
 	"""
 	while True:
 		try:
-			r, g, b = colour_mixing()
+			colour_mixing()
 			if debug:
 				print "Red: {:d} | Green: {:d} | Blue: {:d}".format(r, g, b)
 
-		except:
-			break
+		except KeyboardInterrupt:
+			close_pins()
 			
-
-main()
 close_pins()
